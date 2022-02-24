@@ -25,7 +25,7 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg)
 VALUES ('Angemon', 'June 12, 2005', 1, true, -45 );
 
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
-VALUES ('Boarmon', 'June 7, 2005', 7, true, -20.4 );
+VALUES ('Boarmon', 'June 7, 2005', 7, true, 20.4 );
 
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
-VALUES ('Blossom', 'October 13, 1998', 3, true, -17 );
+VALUES ('Blossom', 'October 13, 1998', 3, true, 17 );

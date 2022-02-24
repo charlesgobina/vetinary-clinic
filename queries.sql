@@ -106,6 +106,8 @@ SET weight_kg = weight_kg * -1
 
 -- Rollback to the savepoint
 ROLLBACK TO SAVEPOINT birth_day_after_jan_1
+SELECT * from animals; -- verify that changes were restored to savepoint
+
 
 
 -- Update all animals' weights that are negative 
@@ -114,7 +116,9 @@ BEGIN;
 UPDATE animals
 SET weight_kg = weight_kg * -1
 WHERE weight_kg < 0;
+SELECT * from animals; -- verify that change was done
 COMMIT;
+SELECT * from animals; -- verify that changes remain after commit
 
 
 -- How many animals are there?
