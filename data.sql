@@ -97,7 +97,7 @@ VALUES
 	(
 		SELECT id 
 		FROM vets
-		WHERE name LIKE 'Vet Stephanie Mendez '
+		WHERE name LIKE 'Vet Stephanie Mendez'
 	),
 	(
 		SELECT id 
@@ -109,7 +109,7 @@ VALUES
 	(
 		SELECT id 
 		FROM vets
-		WHERE name LIKE 'Vet Stephanie Mendez '
+		WHERE name LIKE 'Vet Stephanie Mendez'
 	),
 	(
 		SELECT id 
