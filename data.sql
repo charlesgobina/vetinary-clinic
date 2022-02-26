@@ -71,4 +71,166 @@ UPDATE animals
 SET owner_id = 5
 WHERE name LIKE 'Angemon' OR name LIkE 'Boarmon';
 
+/*Inserting data to vets*/
+INSERT INTO vets(name, age, date_of_graduation) 
+VALUES('Vet William Tatcher', 45, 'April 23, 2000'),
+('Vet Maisy Smith', 26, 'January 17, 2019'),
+('Vet Stephanie Mendez', 64, 'May 4, 1981'),
+('Vet Jack Harkness', 38, 'June 8, 2008');
+
+/*Insert into specialisation*/
+INSERT INTO specializations(vets_id, species_id) 
+VALUES
+(
+	(
+		SELECT id 
+		FROM vets
+		WHERE name LIKE 'Vet William Tatcher'
+	),
+	(
+		SELECT id 
+		FROM species
+		WHERE name LIKE 'Pokemon'
+	)
+),
+(
+	(
+		SELECT id 
+		FROM vets
+		WHERE name LIKE 'Vet Stephanie Mendez'
+	),
+	(
+		SELECT id 
+		FROM species
+		WHERE name LIKE 'Pokemon'
+	)
+),
+(
+	(
+		SELECT id 
+		FROM vets
+		WHERE name LIKE 'Vet Stephanie Mendez'
+	),
+	(
+		SELECT id 
+		FROM species
+		WHERE name LIKE 'Digimon'
+	)
+),
+(
+	(
+		SELECT id 
+		FROM vets
+		WHERE name LIKE 'Vet Jack Harkness'
+	),
+	(
+		SELECT id 
+		FROM species
+		WHERE name LIKE 'Digimon'
+	)
+);
+
+/*Insert into visits*/
+INSERT INTO visits (animals_id, vets_id, visit_date) VALUES 
+(
+    (SELECT id FROM animals WHERE name LIKE 'Agumon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet William Tatcher'),
+    ('May 24, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Agumon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Stephanie Mendez'),
+    ('Jul 22, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Gabumon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Jack Harkness'),
+    ('Feb 2, 2021')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Pikachu'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Maisy Smith'),
+    ('Jan 5, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Pikachu'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Maisy Smith'),
+    ('March 8, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Pikachu'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Maisy Smith'),
+    ('May 14, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Devimon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Stephanie Mendez'),
+    ('May 4, 2021')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Charmander'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Jack Harkness'),
+    ('Feb 24, 2021')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Plantmon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Maisy Smith'),
+    ('Dec 21, 2019')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Plantmon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet William Tatcher'),
+    ('Aug 10, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Plantmon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Maisy Smith'),
+    ('Apr 7, 2021')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Squirtle'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Stephanie Mendez'),
+    ('Sep 29, 2019')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Angemon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Jack Harkness'),
+    ('Oct 3, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Angemon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Jack Harkness'),
+    ('Nov 4, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Boarmon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Maisy Smith'),
+    ('Jan 24, 2019')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Boarmon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Maisy Smith'),
+    ('May 15, 2019')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Boarmon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Maisy Smith'),
+    ('Feb 27, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Boarmon'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Maisy Smith'),
+    ('Aug 3, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Blossom'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet Stephanie Mendez'),
+    ('May 24, 2020')
+),
+(
+    (SELECT id FROM animals WHERE name LIKE 'Blossom'),
+    (SELECT id FROM vets WHERE name LIKE 'Vet William Tatcher'),
+    ('Jan 11, 2021')
+);
+
 
