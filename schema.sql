@@ -83,3 +83,15 @@ CREATE TABLE visits (
 			REFERENCES vets(id),
 	PRIMARY KEY(id)
 );
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+/*Improving this query SELECT COUNT(*) FROM visits where animal_id = 4;*/
+CREATE INDEX animals_identity ON visits(animals_id ASC);
+
+/*Improving this query SELECT * FROM visits where vet_id = 2;*/
+CREATE INDEX vets_identity ON visits(vets_id ASC);
+
+/*Improving this query SELECT * FROM owners where email = 'owner_18327@mail.com';*/
+CREATE INDEX owner_email ON owners(email ASC);
+
